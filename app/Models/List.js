@@ -3,9 +3,9 @@ import { generateId } from "../Utils/GenerateId.js"
 
 export default class List {
   constructor(name, color, id = generateId()) {
-    this.id = id
     this.name = name
     this.color = color
+    this.id = id
   }
 
 
@@ -36,5 +36,4 @@ export default class List {
     tasks.forEach(t => template += t.Template)
     return template
   }
-
 }

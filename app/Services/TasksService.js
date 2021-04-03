@@ -15,10 +15,14 @@ class TasksService {
     ProxyState.tasks = ProxyState.tasks
   }
 
-  completed(task){
-    console.log(task)
+  check() {
+    document.getElementById("box").checked = true;
     saveState()
   }
+  uncheck() {
+    document.getElementById("box").checked = false;
+    saveState()
+}
 }
 
 export const tasksService = new TasksService();

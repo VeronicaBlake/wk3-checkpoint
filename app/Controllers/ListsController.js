@@ -12,7 +12,7 @@ function _draw() {
   }
   lists.forEach(p => template += p.Template)
   document.getElementById("lists").innerHTML = template
-}
+  }
 
 //Public
 export default class ListsController {
@@ -23,8 +23,8 @@ export default class ListsController {
     _draw()
   }
 
-  changeColor(){
-      listsService.changeColor()
+  totalCount(){
+      listsService.totalCount()
   }
 
   addList() {

@@ -1,7 +1,6 @@
 import { tasksService } from "../Services/TasksService.js";
 
 
-
 //Public
 export default class TasksController {
     addTask(listId){
@@ -19,7 +18,10 @@ export default class TasksController {
       tasksService.deleteTask(listId)
   }
 
-  completed(task){
-      tasksService.completed(task)
+  check() {
+    tasksService.check()
+  }
+  uncheck() {
+    tasksService.uncheck()
   }
 }
