@@ -10,6 +10,7 @@ export default class Task {
 
   get Template() {
     return `<ul class = "list-group">
-      <li class = "list-group-item"><input type="checkbox"> ${this.name} <i class="fas fa-times ml-2 text-danger" onclick="app.tasksController.deleteTask('${this.id}')"></i></li>`
+      <li class = "list-group-item"><input type="checkbox" onclick= "app.tasksController.completed('${this.id}')" checked> 
+      ${this.name}<i class="fas fa-times ml-2 text-danger" onclick="app.tasksController.deleteTask('${this.id}')"></i></li>`
   }
 }

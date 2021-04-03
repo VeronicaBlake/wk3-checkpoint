@@ -18,4 +18,8 @@ export default class TasksController {
   deleteTask(listId){
       tasksService.deleteTask(listId)
   }
+
+  completed(task){
+      tasksService.completed(task)
+  }
 }

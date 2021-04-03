@@ -14,6 +14,11 @@ class TasksService {
     saveState()
     ProxyState.tasks = ProxyState.tasks
   }
+
+  completed(task){
+    console.log(task)
+    saveState()
+  }
 }
 
 export const tasksService = new TasksService();
