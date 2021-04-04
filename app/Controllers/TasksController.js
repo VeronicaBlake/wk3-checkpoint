@@ -18,10 +18,14 @@ export default class TasksController {
       tasksService.deleteTask(listId)
   }
 
-  check() {
-    tasksService.check()
-  }
-  uncheck() {
-    tasksService.uncheck()
+//   check() {
+//     tasksService.check()
+//   }
+//   uncheck() {
+//     tasksService.uncheck()
+//   }
+
+  completed(bool, id){
+      tasksService.completed(bool, id)
   }
 }

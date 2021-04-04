@@ -15,14 +15,18 @@ class TasksService {
     ProxyState.tasks = ProxyState.tasks
   }
 
-  check() {
-    document.getElementById("box").checked = true;
-    saveState()
-  }
-  uncheck() {
-    document.getElementById("box").checked = false;
-    saveState()
-}
+    completed(bool, id){
+      ProxyState.tasks.find(i => i.id === id).checked = bool
+      saveState()
+      ProxyState.tasks = ProxyState.tasks
+    }
+  // check() {
+  //   document.getElementById("box").checked = true;
+  //   saveState()
+  // }
+  // uncheck() {
+  //   document.getElementById("box").checked = false;
+  //   saveState()
 }
 
 export const tasksService = new TasksService();

@@ -14,6 +14,10 @@ export function loadState() {
   let data = JSON.parse(localStorage.getItem('taskmaster'))
   if (data) {
     ProxyState.lists = data.lists.map(list => new List(list.name, list.color, list.id));
-    ProxyState.tasks = data.tasks.map(task => new Task(task.name, task.listId, task.taskCount, task.id));
+    ProxyState.tasks = data.tasks.map(task => new Task(task.name, task.listId, task.checked, task.id));
+  }
+  let checked = JSON.parse(localStorage.getItem('box'))
+  if (checked == true){
+      document.getElementById("box").checked = true;
   }
 }
