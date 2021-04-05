@@ -14,7 +14,7 @@ export default class List {
     <div class="col-md-4">
       <div class="list-card shadow bg-white rounded">
           <div class="text-center ${this.color} p-2 d-flex justify-content-between">
-              <h3>${this.name}</h3>
+              <h3>${this.name}</h3><span> Remaining: ${this.CompletedTasks}/${this.Total}</span>
               <i class="fas fa-times ml-2" onclick="app.listsController.deleteList('${this.id}')"></i>
           </div>
           <div class="p-3">
@@ -35,5 +35,15 @@ export default class List {
     let template = ''
     tasks.forEach(t => template += t.Template)
     return template
+  }
+
+  get Total(){
+    let total = ProxyState.tasks.filter(t => t.listId === this.id)
+    return total.length
+  }
+
+  get CompletedTasks(){
+    let completed = ProxyState.tasks.filter(t => t.listId === this.id && t.checked == false)
+    return completed.length
   }
 }
