@@ -4,8 +4,8 @@ import { saveState } from "../Utils/LocalStorage.js";
 
 class TasksService {
   deleteTask(id) {
-    ProxyState.tasks = ProxyState.tasks.filter(i => i.id != id)
     if(window.confirm('Permanently Delete this Task?'))
+    ProxyState.tasks = ProxyState.tasks.filter(i => i.id != id)
     saveState()
 
   }
